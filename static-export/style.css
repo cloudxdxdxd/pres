@@ -1289,6 +1289,7 @@ a *,
 }
 
 .floating-heart-item {
+  display: block;
   position: absolute;
   top: 0;
   will-change: transform, opacity;
@@ -1322,6 +1323,7 @@ a *,
 }
 
 .sakura-petal-item {
+  display: block;
   position: absolute;
   top: 0;
   will-change: transform, opacity;

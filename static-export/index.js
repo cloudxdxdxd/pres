@@ -1,5 +1,5 @@
 (function () {
-  const STORAGE_KEY = 'com_nd_lavi_posters_v7';
+  const STORAGE_KEY = 'com_nd_lavi_posters_v8';
   const NO_OFFSETS = [
     { x: 64, y: -50 },
     { x: -92, y: 46 },
@@ -15,7 +15,7 @@
       fallbackUsername: '764sa',
       name: 'com',
       caption: 'i love lavi',
-      photoDataUrl: './assets/aistudio/1e6b927f5877add71dd4deec48ab0716_d965cf8f.jpg',
+      photoDataUrl: './com.jpg',
     },
     lavi: {
       id: 'lavi',
@@ -23,11 +23,11 @@
       fallbackUsername: 'm7za',
       name: 'lavi',
       caption: 'i love com',
-      photoDataUrl: './assets/aistudio/IMG_20261123_150435_b4cd3e5b.jpg',
+      photoDataUrl: './lavi.jpg',
     },
   };
 
-  const DISCORD_BANNER_PATH = './assets/aistudio/image_89b2f9de.png';
+  const DISCORD_BANNER_PATH = './banner.png';
 
   const POSTER_STATUS_META = {
     online: { label: 'online', dotClass: 'dot-online' },
@@ -162,7 +162,7 @@
       span.style.setProperty('--heart-rot-start', `${rotStart}deg`);
       span.style.setProperty('--heart-rot-end', `${rotEnd}deg`);
       span.style.setProperty('--heart-opacity', opacity.toFixed(2));
-      span.innerHTML = `<svg viewBox="0 0 24 24" style="width:100%;height:100%" fill="${
+      span.innerHTML = `<svg viewBox="0 0 24 24" style="display:block;width:100%;height:100%" fill="${
         outline ? 'none' : color
       }" stroke="${outline ? color : 'rgba(255,255,255,0.7)'}" stroke-width="${
         outline ? 1.8 : 0.9
@@ -201,7 +201,7 @@
       span.style.setProperty('--petal-rot-start', `${rotStart}deg`);
       span.style.setProperty('--petal-rot-end', `${rotEnd}deg`);
       span.style.setProperty('--petal-opacity', opacity.toFixed(2));
-      span.innerHTML = `<svg viewBox="0 0 24 30" style="width:100%;height:100%" fill="none"><path d="M12 28 C10.8 25.5 4.2 19.8 4 12.2 C3.8 6.8 6.9 2.4 9.6 2.1 C10.9 2 11.6 3.5 12 5.1 C12.4 3.5 13.1 2 14.4 2.1 C17.1 2.4 20.2 6.8 20 12.2 C19.8 19.8 13.2 25.5 12 28 Z" fill="${pal.fill}" stroke="${pal.stroke}" stroke-width="0.9"/><path d="M12 25.5 C11.9 20.5 11.9 15.5 12 9.5" stroke="rgba(255, 255, 255, 0.65)" stroke-width="0.8" stroke-linecap="round"/></svg>`;
+      span.innerHTML = `<svg viewBox="0 0 24 30" style="display:block;width:100%;height:100%" fill="none"><path d="M12 28 C10.8 25.5 4.2 19.8 4 12.2 C3.8 6.8 6.9 2.4 9.6 2.1 C10.9 2 11.6 3.5 12 5.1 C12.4 3.5 13.1 2 14.4 2.1 C17.1 2.4 20.2 6.8 20 12.2 C19.8 19.8 13.2 25.5 12 28 Z" fill="${pal.fill}" stroke="${pal.stroke}" stroke-width="0.9"/><path d="M12 25.5 C11.9 20.5 11.9 15.5 12 9.5" stroke="rgba(255, 255, 255, 0.65)" stroke-width="0.8" stroke-linecap="round"/></svg>`;
       petalsHost.appendChild(span);
     }
   }
@@ -714,7 +714,6 @@
       }
     });
 
-    // Entrance Gate
     const gate = document.getElementById('entrance-gate');
     const mainSite = document.getElementById('main-site');
     const yesBtn = document.getElementById('yes-btn');
@@ -745,14 +744,12 @@
       }
     });
 
-    // Navigation Tabs
     document.querySelectorAll('.nav-tab').forEach((tab) => {
       tab.addEventListener('click', () => {
         switchPage(tab.getAttribute('data-page'));
       });
     });
 
-    // Love Letter Toggle
     const envelopeBtn = document.getElementById('envelope-btn');
     const openLetter = document.getElementById('open-letter');
 

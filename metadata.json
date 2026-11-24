@@ -1,0 +1,8 @@
+{
+  "name": "Remix com nd lavi",
+  "description": "A personal couple space for com and lavi featuring interactive lanyard profile cards and background music.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>com nd lavi</title>
+    <meta
+      name="description"
+      content="A personal couple space for com and lavi featuring interactive lanyard profile cards and background music."
+    />
+    <meta property="og:title" content="com nd lavi" />
+    <meta
+      property="og:description"
+      content="A personal couple space for com and lavi featuring interactive lanyard profile cards and background music."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=JetBrains+Mono:wght@400;500&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <audio
+        id="bg-audio"
+        src="./assets/aistudio/wave_to_earth_-_seasons_b863d003.mp3"
+        loop
+        preload="auto"
+      ></audio>
+
+      <div class="bg-layer" aria-hidden="true">
+        <img
+          id="bg-image"
+          src="./assets/aistudio/1fc5dc8b249a2df7abc9c0e134d0f0fc_43281f00.jpg"
+          alt="Misty willow pond framed in white lace"
+          referrerpolicy="no-referrer"
+        />
+      </div>
+
+      <div id="floating-hearts" class="fx-layer fx-hearts" aria-hidden="true"></div>
+      <div id="cherry-blossoms" class="fx-layer fx-petals" aria-hidden="true"></div>
+
+      <!-- Entrance Gate -->
+      <section id="entrance-gate" class="entrance-gate" aria-label="Welcome gate">
+        <div class="gate-card fade-in-up">
+          <p class="gate-kicker">com nd lavi</p>
+          <h1 class="gate-title">does lavi and com cute together?</h1>
+          <div class="gate-actions">
+            <button id="yes-btn" type="button" class="btn-yes">Yes</button>
+            <button id="no-btn" type="button" class="btn-no">No</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Site -->
+      <main id="main-site" class="main-site hidden">
+        <nav class="page-nav" aria-label="Page navigation">
+          <button type="button" class="nav-tab is-active" data-page="colavi" aria-current="page">
+            colavi
+          </button>
+          <button type="button" class="nav-tab" data-page="dc">dc</button>
+          <button type="button" class="nav-tab" data-page="lavi">lavi</button>
+        </nav>
+
+        <header class="site-header">
+          <h1 id="page-title" class="page-title">
+            com <span class="title-accent">nd</span> lavi
+          </h1>
+          <p id="page-subtitle" class="page-subtitle">
+            <span>our little corner</span>
+            <span class="dot-sep" aria-hidden="true">·</span>
+            <span>just you &amp; me</span>
+          </p>
+
+          <div class="audio-wrap">
+            <div class="audio-bar">
+              <button
+                id="play-btn"
+                type="button"
+                class="audio-play-btn"
+                aria-label="Play background music"
+              ></button>
+
+              <div class="audio-center">
+                <div class="audio-meta">
+                  <div class="audio-track">
+                    <span class="track-name">seasons</span>
+                    <span class="dot-sep" aria-hidden="true">·</span>
+                    <span class="track-artist">wave to earth</span>
+                  </div>
+                  <div class="audio-right-meta">
+                    <span id="eq-bars" class="eq-bars hidden" aria-hidden="true">
+                      <span class="eq-bar eq-1"></span>
+                      <span class="eq-bar eq-2"></span>
+                      <span class="eq-bar eq-3"></span>
+                    </span>
+                    <span id="time-display" class="time-display">0:00 / 4:16</span>
+                  </div>
+                </div>
+
+                <div class="seek-wrap">
+                  <div class="seek-track">
+                    <div id="seek-fill" class="seek-fill"></div>
+                  </div>
+                  <input
+                    id="seek-input"
+                    type="range"
+                    min="0"
+                    max="256"
+                    step="0.5"
+                    value="0"
+                    aria-label="Seek music progress"
+                    class="seek-input"
+                  />
+                </div>
+              </div>
+
+              <button
+                id="mute-btn"
+                type="button"
+                class="audio-mute-btn"
+                aria-label="Mute background music"
+              ></button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Page 1: colavi -->
+        <div id="page-colavi" class="page-view">
+          <section class="posters-section" aria-label="Couple profile posters">
+            <div id="posters-container" class="cards-row cards-row--posters"></div>
+          </section>
+
+          <section class="letter-section" aria-label="Com's letter to Lavi">
+            <button
+              id="envelope-btn"
+              type="button"
+              class="envelope-btn"
+              aria-expanded="false"
+              aria-label="Open com's letter to lavi"
+            >
+              <svg viewBox="0 0 400 250" preserveAspectRatio="none" class="envelope-svg" aria-hidden="true">
+                <path
+                  d="M0 0 L200 135 L400 0"
+                  fill="rgba(255, 255, 255, 0.72)"
+                  stroke="rgba(244, 169, 184, 0.55)"
+                  stroke-width="1.5"
+                />
+                <path
+                  d="M0 250 L150 105 M400 250 L250 105"
+                  fill="none"
+                  stroke="rgba(244, 169, 184, 0.38)"
+                  stroke-width="1.2"
+                />
+              </svg>
+              <span class="envelope-seal">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                  <path
+                    d="M12 20.5C12 20.5 4.5 15.2 4.5 9.6C4.5 7.1 6.4 5.2 8.8 5.2C10.3 5.2 11.4 6 12 7.1C12.6 6 13.7 5.2 15.2 5.2C17.6 5.2 19.5 7.1 19.5 9.6C19.5 15.2 12 20.5 12 20.5Z"
+                  />
+                </svg>
+              </span>
+              <span class="envelope-label">
+                <span class="envelope-title">com's letter to lavi</span>
+                <span class="envelope-sub">click to open</span>
+              </span>
+            </button>
+
+            <article
+              id="open-letter"
+              role="button"
+              tabindex="0"
+              aria-expanded="true"
+              aria-label="Close com's letter to lavi"
+              class="letter-card hidden"
+            >
+              <div class="letter-top">
+                <span class="letter-kicker">com's letter to lavi</span>
+                <div class="letter-close-hint">
+                  <span>click to close</span>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="letter-heart-icon" aria-hidden="true">
+                    <path
+                      d="M12 20.5C12 20.5 4.5 15.2 4.5 9.6C4.5 7.1 6.4 5.2 8.8 5.2C10.3 5.2 11.4 6 12 7.1C12.6 6 13.7 5.2 15.2 5.2C17.6 5.2 19.5 7.1 19.5 9.6C19.5 15.2 12 20.5 12 20.5Z"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      fill="rgba(251, 113, 133, 0.14)"
+                    />
+                  </svg>
+                </div>
+              </div>
+
+              <div class="letter-body">
+                <h3>Dear lavi,</h3>
+                <div class="letter-paragraphs">
+                  <p>
+                    Thank you for being the softest and brightest part of my every day—for every laugh, every quiet moment, and the warmth you bring into my life just by being yourself.
+                  </p>
+                  <p>
+                    No matter how the seasons change around us, I will always choose you in all the little moments, holding your hand through every ordinary afternoon and every dream waiting ahead of us.
+                  </p>
+                  <p>
+                    I'm so grateful I get to call you mine, today and in every season to come.
+                  </p>
+                </div>
+                <div class="letter-signoff">
+                  <p class="signoff-small">always yours,</p>
+                  <p class="signoff-name">com</p>
+                </div>
+              </div>
+            </article>
+          </section>
+        </div>
+
+        <!-- Page 2: dc -->
+        <section id="page-dc" class="page-view dc-section hidden" aria-label="Discord profiles">
+          <div id="discord-cards-container" class="cards-row cards-row--dc"></div>
+        </section>
+
+        <!-- Page 3: lavi -->
+        <section id="page-lavi" class="page-view lavi-section hidden" aria-label="A letter for Lavi">
+          <div class="lavi-banner">
+            <h2>mahal ko ikaw babyy lavii so much :&gt;</h2>
+          </div>
+
+          <article class="lavi-letter">
+            <div class="lavi-letter-top">
+              <span>for my babyy lavii</span>
+              <div class="lavi-icons">
+                <svg width="20" height="16" viewBox="0 0 24 18" fill="none" aria-hidden="true">
+                  <ellipse cx="6.5" cy="9" rx="5" ry="4.2" fill="#FDA4AF" stroke="#B06C80" stroke-width="1.2" />
+                  <ellipse cx="17.5" cy="9" rx="5" ry="4.2" fill="#FDA4AF" stroke="#B06C80" stroke-width="1.2" />
+                  <circle cx="12" cy="9" r="2.8" fill="#FB7185" stroke="#B06C80" stroke-width="1.2" />
+                </svg>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="lavi-heart" aria-hidden="true">
+                  <path
+                    d="M12 20.5C12 20.5 4.5 15.2 4.5 9.6C4.5 7.1 6.4 5.2 8.8 5.2C10.3 5.2 11.4 6 12 7.1C12.6 6 13.7 5.2 15.2 5.2C17.6 5.2 19.5 7.1 19.5 9.6C19.5 15.2 12 20.5 12 20.5Z"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="rgba(251, 113, 133, 0.28)"
+                  />
+                </svg>
+              </div>
+            </div>
+
+            <div class="letter-body">
+              <h3>Hi babyy lavii,</h3>
+              <div class="letter-paragraphs">
+                <p>
+                  Just wanted to remind you how deeply loved, appreciated, and special you are to me every single day. Everything feels lighter, sweeter, and calmer whenever I'm with you.
+                </p>
+                <p>
+                  Thank you for being my comfort, my happiness, and my favorite person in the whole world. No matter how busy or tiring the day gets, coming back to you will always be my favorite part.
+                </p>
+                <p>
+                  Mahal ko ikaw sobra, babyy. I'll always be right here cheering for you, taking care of you, and loving you in every season.
+                </p>
+              </div>
+
+              <div class="lavi-signoff">
+                <div>
+                  <p class="signoff-small">forever &amp; always yours,</p>
+                  <p class="signoff-name">com</p>
+                </div>
+                <span class="lavi-love-tag">i love you</span>
+              </div>
+            </div>
+          </article>
+        </section>
+      </main>
+    </div>
+
+    <script src="./index.js" defer></script>
+  </body>
+</html>
